@@ -5,6 +5,12 @@
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjB2WPD36RiK2jUTMwrJyp_UlFMpUeqic"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjB2WPD36RiK2jUTMwrJyp_UlFMpUeqic&callback=initMap"
+            type="text/javascript"></script>
+
+    <script src="scripts/skycons.js.js"></script>
     <script src="scripts/scritps.js"></script>
 
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -12,7 +18,7 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
-<body>
+<body onload="initialize()">
     <!-- ======================================================================= -->
     <!-- NavBar -->
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -40,14 +46,19 @@
         </div>
     </div>
 
-    <div class="container-fluid scrollable navbar-offset">
-        <div class="quote" id="info">
+    <div class="container-fluid navbar-offset nopad">
+        <div class="row">
+            <div class="col-xs-12 cols-sm-12 col-md-4 nopad">
+                <div class="myLocation"  id="info">
 
-        </div>
-        <br>
-        <div class="forecast">
+                </div>
+            </div>
+            <div class="col-xs-12 cols-sm-12 col-md-8 nopad">
+                <div class="daily forecast scrollable">
+                    <h4>Next 7 days:</h4>
+                </div>
 
-        </div>
+            </div>
     </div>
 
     <footer class="navbar navbar-inverse navbar-fixed-bottom" >
