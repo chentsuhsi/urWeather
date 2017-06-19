@@ -1,0 +1,119 @@
+body, html {
+    min-width: 320;
+    height: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    padding-top: 0;
+    margin: 0;
+    font-family: Verdana, Arial;
+}
+
+body {
+    padding-top: 60px;
+}
+
+footer {
+  background-color: #000000;  
+  font-size: 16px;
+  color: #ffffff;
+}
+.navbar-offset {
+   top: 25px; /*Offsets the top navbar 37px from the top of the viewport*/
+}
+
+.navbar-header{
+  height: 60px;
+  margin: 0;
+}
+
+.navbar-brand {
+  width: 160px;
+  margin: 0;
+}
+
+.container-fluid.scrollable {
+  height: 100%; /*Sets the scrollable area to 100% of the viewport*/
+  overflow: auto; /*Allows the scrollable area to have a scrollbar based on the height of its content*/
+  margin: 0;
+}
+
+.buttons {
+    padding : 5px 5% 0 5%;
+}
+
+.quote {
+    padding: 5%;
+}
+
+.quote-txt {
+    font-size: 48px;
+    font-family: "Lucida Handwriting", Calibri, Arial;
+    background-color: #888888;
+    color: #111111;
+    text-align: justify;
+    border: solid #333333 2px;
+    border-radius: 15px 15px 0 0;
+    box-shadow: 5px 5px 5px 5px grey;
+    border-bottom: 0;
+    padding: 25px;
+}
+
+.quote-author {
+    font-size: 24px;
+    background-color: #aaaaaa;
+    color: inherit;
+    text-align: right;
+    border: solid #333333 2px;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 25px;
+}
+
+.quote-fwd-l {
+    text-align: left;
+}
+
+.quote-fwd-r {
+    text-align: right;
+}
+
+@media (max-width:990px) {
+}
+
+@media (max-width:768px) {
+    .quote-fwd-l {
+        text-align: left;
+        padding-top: 10px;
+    }
+    .quote-fwd-r {
+        text-align: right;
+        padding-top: 10px;
+    }
+    .btn-extend { width: 100%; display:block; }
+}
+
+@media (max-width:480px) {
+    .quote-txt {
+        font-size: 20px;
+        font-family: "Lucida Handwriting", Calibri, Arial;
+        background-color: #888888;
+        color: #111111;
+        text-align: justify;
+        border: solid #333333 2px;
+        border-radius: 5px 5px 0 0;
+        box-shadow: 2px 2px 2px 2px grey;
+        border-bottom: 0;
+        padding: 5px;
+    }
+    .quote-author {
+        font-size: 12px;
+        background-color: #aaaaaa;
+        color: inherit;
+        text-align: right;
+        border: solid #333333 2px;
+        border-radius: 0 0 5px 5px;
+        box-shadow: 2px 2px 2px 2px grey;
+        padding: 5px;
+    }
+}
+
