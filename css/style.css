@@ -63,6 +63,14 @@ body {
 }
 
 @media (max-width:768px) {
+    .myLocation, .forecast, .weatherNow {
+        font-size: 60px;
+        font-family: Calibri, Arial;
+        color: #111111;
+        text-align: left;
+        padding: 10px;
+        margin: 10px;
+    }
 }
 
 @media (max-width:480px) {

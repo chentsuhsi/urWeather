@@ -52,37 +52,37 @@ function getForecastMessage (pSite, pLat, pLng, callback){
 
                 $('.weatherNow').html(
                     '<div class="row infoNow">' +
-                    '    <div class="col-xs-6"> Weather Now: </div>'+
-                    '    <div class="col-xs-6">' + myObj['currently']['summary'] + ' </div>'+
+                    '    <div class="col-xs-12 col-sm-6"> Weather Now: </div>'+
+                    '    <div class="col-xs-12 col-sm-6>' + myObj['currently']['summary'] + ' </div>'+
                     '</div>' +
 
                     '    <hr>' +
 
                     '<div class="row">' +
-                    '    <div class="col-xs-6"> Cloud Cover: </div>' +
-                    '    <div class="col-xs-6"> ' + Math.round(myObj['currently']['cloudCover']) + ' %</div>' +
+                    '    <div class="col-xs-12 col-sm-6"> Cloud Cover: </div>' +
+                    '    <div class="col-xs-12 col-sm-6"> ' + Math.round(myObj['currently']['cloudCover']) + ' %</div>' +
                     '</div>' +
 
                     '<div class="row">' +
-                    '    <div class="col-xs-6" id="nowTemperature"> Temperature: </div>' +
-                    '    <div class="col-xs-6"> ' + Math.round(myObj['currently']['temperature']) + ' ºF</div>' +
+                    '    <div class="col-xs-12 col-sm-6" id="nowTemperature"> Temperature: </div>' +
+                    '    <div class="col-xs-12 col-sm-6"> ' + Math.round(myObj['currently']['temperature']) + ' ºF</div>' +
                     '</div>' +
 
                     '<div class="row">' +
-                    '    <div class="col-xs-6"> Humidity: </div>' +
-                    '    <div class="col-xs-6"> ' + Math.round(myObj['currently']['humidity'] * 100) + ' %</div>' +
+                    '    <div class="col-xs-12 col-sm-6"> Humidity: </div>' +
+                    '    <div class="col-xs-12 col-sm-6"> ' + Math.round(myObj['currently']['humidity'] * 100) + ' %</div>' +
                     '</div>' +
 
                     '<div class="row">' +
-                    '    <div class="col-xs-6"> Wind Speed: </div>' +
-                    '    <div class="col-xs-6"> ' +myObj['currently']['windSpeed'] + ' mph</div>' +
+                    '    <div class="col-xs-12 col-sm-6"> Wind Speed: </div>' +
+                    '    <div class="col-xs-12 col-sm-6"> ' +myObj['currently']['windSpeed'] + ' mph</div>' +
                     '</div>' +
 
                     '    <hr>' +
 
                     '<div class="row">' +
-                    '    <div class="col-xs-6"> ' + aux + ' Probability: </div>' +
-                    '    <div class="col-xs-6"> ' +Math.round(myObj['currently']['precipProbability'] * 100) + ' %</div>' +
+                    '    <div class="col-xs-12 col-sm-6"> ' + aux + ' Probability: </div>' +
+                    '    <div class="col-xs-12 col-sm-6"> ' +Math.round(myObj['currently']['precipProbability'] * 100) + ' %</div>' +
                     '</div>'
                 );
 
