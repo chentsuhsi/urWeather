@@ -91,7 +91,7 @@ body {
         margin: 10px;
     }
     .lbl {
-        display: block;
+        display: none;
     }
     .ico {
         display: block;
