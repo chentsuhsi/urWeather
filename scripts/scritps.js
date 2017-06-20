@@ -65,12 +65,12 @@ function getForecastMessage (pSite, pLat, pLng, callback){
 
                     '<div class="row">' +
                     '    <div class="col-xs-6" id="nowTemperature"> Temperature: </div>' +
-                    '    <div class="col-xs-6"> ' +myObj['currently']['temperature'] + ' ºF</div>' +
+                    '    <div class="col-xs-6"> ' + Math.round(myObj['currently']['temperature']) + ' ºF</div>' +
                     '</div>' +
 
                     '<div class="row">' +
                     '    <div class="col-xs-6"> Humidity: </div>' +
-                    '    <div class="col-xs-6"> ' +myObj['currently']['humidity'] * 100 + ' %</div>' +
+                    '    <div class="col-xs-6"> ' + Math.round(myObj['currently']['humidity'] * 100 + ' %</div>' +
                     '</div>' +
 
                     '<div class="row">' +
