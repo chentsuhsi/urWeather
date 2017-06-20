@@ -105,12 +105,19 @@ body {
         margin: 0px;
     }
 
+    .floating-box {
+        display: inline-block;
+        align-items: center;
+        text-align: center;
+        padding : 10px;
+    }
+
     .lbl {
-        display: block;
+        display: inline-block;
     }
 
     .ico {
-        display: block;
+        display: inline-block;
     }
 
     .col-xs-1, .col-xs-6, .col-xs-5,
@@ -129,7 +136,7 @@ body {
         margin: 0px;
     }
     .ico {
-        padding: 10px;
+        padding: 20px;
         display: block;
     }
     .col-xs-1, .col-xs-6,

@@ -50,68 +50,58 @@ function getForecastMessage (pSite, pLat, pLng, callback){
                 }
 
                 var mystr = myObj['currently']['icon'];
-                switch (str) {
+                var iconType = '';
+                switch (mystr) {
                     case mystr = "day-sunny":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-clear-day');
+                        iconType = 'wi-forecast-io-clear-day';
                         break;
                     case mystr = "night-clear":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-clear-night');
+                        iconType = 'wi-forecast-io-clear-night';
                         break;
                     case mystr = "rain":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-rain');
+                        iconType = 'wi-forecast-io-rain';
                         break;
                     case mystr = "snow":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-snow');
+                        iconType = 'wi-forecast-io-snow';
                         break;
                     case mystr = "strong-wind":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-sleet');
+                        iconType = 'wi-forecast-io-sleet';
                         break;
                     case mystr = "fog":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-fog');
+                        iconType = 'wi-forecast-io-fog';
                         break;
                     case mystr = "cloudy":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-cloudy');
+                        iconType = 'wi-forecast-io-cloudy';
                         break;
                     case mystr = "mostly-cloudy":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-cloudy');
+                        iconType = 'wi-forecast-io-cloudy';
                         break;
-                    case mystr = "partly-cloudy":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-partly-cloudy-day');
+                    case mystr = "partly-cloudy-day":
+                        iconType = 'wi-forecast-io-partly-cloudy-day';
                         break;
                     case mystr = "strong-wind":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-wind');
+                        iconType = 'wi-forecast-io-wind';
                         break;
                     case mystr = "day-cloudy":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-partly-cloudy-day');
+                        iconType = 'wi-forecast-io-partly-cloudy-day';
                         break;
                     case mystr = "night-cloudy":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-partly-cloudy-night');
+                        iconType = 'wi-forecast-io-partly-cloudy-night';
                         break;
                     case mystr = "hail":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-hail');
+                        iconType = 'wi-forecast-io-hail';
                         break;
                     case mystr = "thunderstorm":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-thunderstorm');
+                        iconType = 'wi-forecast-io-thunderstorm';
                         break;
                     case mystr = "tornado":
-                        $('.nfoIcon').removeClass('wi-na');
-                        $('.nfoIcon').addClass('wi-forecast-io-tornado');
+                        iconType = 'wi-forecast-io-tornado';
                         break;
                 }
+
+                $('.nfoIcon').html(
+                    '<i class="wi '+ iconType + ' ico"></i>'
+                );
 
                 $("#nfoSummary").html(myObj['currently']['summary']);
                 $("#nfoTemperature").html(Math.round(myObj['currently']['temperature']) + 'ºF');
