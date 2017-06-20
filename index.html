@@ -9,11 +9,12 @@
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDjB2WPD36RiK2jUTMwrJyp_UlFMpUeqic&callback=initMap"
             type="text/javascript"></script>
 
-    <script src="scripts/scritps.js"></script>
 
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="scripts/scritps.js"></script>
 
 </head>
 <body>
@@ -34,6 +35,9 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-left">
+                    <li>
+                        <a href="#"><span class="myLocation fa fa-compass fa-2x" aria-hidden="true" id="info">  </span></a>
+                    </li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -46,22 +50,42 @@
 
     <div class="container-fluid navbar-offset nopad">
         <div class="row">
-            <div class="col-xs-12 cols-sm-12 col-md-4 nopad">
-                <div class="myLocation"  id="info">
-
-                </div>
+            <i class="fa fa-thermometer-half"></i>
+            <div class="col-xs-12 cols-sm-12 col-md-6">
                 <div class="weatherNow"  id="infoWeatherNow">
+                    <div class="row infoNow infoEven">
+                        <div class="col-xs-12 col-sm-6"><i class="fa fa-thermometer-half"  aria-hidden="true"></i><span class="lbl"> Weather Now: </span></div>
+                        <div class="col-xs-12 col-sm-6" id="nfoSummary"></div>
+                    </div>
+                    <div class="row infoOdd">
+                        <i class="fa fa-thermometer-half"></i>
+                        <div class="col-xs-12 col-sm-6" id="nowTemperature"><i class="fa fa-thermometer-half"></i><span class="lbl">  Temperature: </span> </div>
+                        <div class="col-xs-12 col-sm-6" id="nfoTemperature"></div>
+                    </div>
+                    <div class="row infoEven">
+                       <div class="col-xs-12 col-sm-6"><span class="lbl">  Humidity: </span> </div>
+                       <div class="col-xs-12 col-sm-6" id="nfoHumidity"></div>
+                    </div>
 
+                    <div class="row infoOdd">
+                        <div class="col-xs-12 col-sm-6"><span class="lbl">  Wind Speed: </span> </div>
+                        <div class="col-xs-12 col-sm-6" id="nfoWindSpeed"></div>
+                    </div>
+                    <div class="row infoEven">
+                        <div class="col-xs-12 col-sm-6"><span class="lbl">  Cloud Cover: </span> </div>
+                        <div class="col-xs-12 col-sm-6" id="nfoCloudCover"></div>
+                    </div>
+                    <div class="row infoOdd">
+                        <div class="col-xs-12 col-sm-6"><span class="lbl" id="nfoPrecipType"></span></div>
+                        <div class="col-xs-12 col-sm-6" id="nfoPrecipProbability"></span></div>
+                    </div>
                 </div>
             </div>
-            <div class="col-xs-12 cols-sm-12 col-md-8 nopad">
+            <div class="col-xs-12 cols-sm-12 col-md-8">
                 <div class="daily forecast scrollable">
                 </div>
 
             </div>
-
-<!--             <footer class="navbar navbar-inverse navbar-fixed-bottom" > -->
-<!--            </footer> -->
         </div>
         <div class="row">
             <div class="container-fluid text-center footer">

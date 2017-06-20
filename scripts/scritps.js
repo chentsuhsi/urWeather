@@ -49,42 +49,13 @@ function getForecastMessage (pSite, pLat, pLng, callback){
                         break;
                 }
 
-
-                $('.weatherNow').html(
-                    '<div class="row infoNow">' +
-                    '    <div class="col-xs-12 col-sm-6"> Weather Now: </div>'+
-                    '    <div class="col-xs-12 col-sm-6>' + myObj['currently']['summary'] + ' </div>'+
-                    '</div>' +
-
-                    '    <hr>' +
-
-                    '<div class="row">' +
-                    '    <div class="col-xs-12 col-sm-6"> Cloud Cover: </div>' +
-                    '    <div class="col-xs-12 col-sm-6"> ' + Math.round(myObj['currently']['cloudCover']) + ' %</div>' +
-                    '</div>' +
-
-                    '<div class="row">' +
-                    '    <div class="col-xs-12 col-sm-6" id="nowTemperature"> Temperature: </div>' +
-                    '    <div class="col-xs-12 col-sm-6"> ' + Math.round(myObj['currently']['temperature']) + ' ºF</div>' +
-                    '</div>' +
-
-                    '<div class="row">' +
-                    '    <div class="col-xs-12 col-sm-6"> Humidity: </div>' +
-                    '    <div class="col-xs-12 col-sm-6"> ' + Math.round(myObj['currently']['humidity'] * 100) + ' %</div>' +
-                    '</div>' +
-
-                    '<div class="row">' +
-                    '    <div class="col-xs-12 col-sm-6"> Wind Speed: </div>' +
-                    '    <div class="col-xs-12 col-sm-6"> ' +myObj['currently']['windSpeed'] + ' mph</div>' +
-                    '</div>' +
-
-                    '    <hr>' +
-
-                    '<div class="row">' +
-                    '    <div class="col-xs-12 col-sm-6"> ' + aux + ' Probability: </div>' +
-                    '    <div class="col-xs-12 col-sm-6"> ' +Math.round(myObj['currently']['precipProbability'] * 100) + ' %</div>' +
-                    '</div>'
-                );
+                $("#nfoSummary").html(myObj['currently']['summary']);
+                $("#nfoTemperature").html(Math.round(myObj['currently']['temperature']) + 'ºF');
+                $("#nfoHumidity").html(Math.round(myObj['currently']['humidity'] * 100) + '%');
+                $("#nfoWindSpeed").html(myObj['currently']['windSpeed'] + 'mph');
+                $("#nfoCloudCover").html(Math.round(myObj['currently']['cloudCover']) + '%');
+                $("#nfoPrecipType").html(aux + ' Fall');
+                $("#nfoPrecipProbability").html(Math.round(myObj['currently']['precipProbability'] * 100) + ' %');
 
                 callback();
         }
@@ -131,9 +102,9 @@ function showLocation(lat, lng, callback) {
                  alert(results[0].address_components[6].long_name) -> postal_code_suffix;
                  */
                 $(".myLocation").html(
-                    "City   : " + results[0].address_components[2].long_name + "<br>" +
-                    "State  : " + results[0].address_components[4].long_name + "<br>" +
-                    "Country: " + results[0].address_components[5].long_name + "<br>"
+                    ' '+ results[0].address_components[2].long_name +
+                    ', ' + results[0].address_components[4].short_name +
+                    ' - ' + results[0].address_components[5].short_name
                 );
             } else {
                 $(".myLocation").html(

@@ -38,16 +38,7 @@ body {
   margin: 0;
 }
 
-
-.buttons {
-    padding : 5px 5% 0 5%;
-}
-
-.quote {
-    padding: 5%;
-}
-
-.myLocation, .forecast, .weatherNow {
+.forecast, .weatherNow {
     font-size: 32px;
     font-family: Calibri, Arial;
     color: #111111;
@@ -56,27 +47,40 @@ body {
     margin: 10px;
 }
 
+.lbl {
+    display: block;
+}
+
+.ico {
+    display: block;
+}
+.infoOdd {
+    background-color : #555555;
+}
+
+.infoEven {
+    background-color : #aaaaaa;
+}
 @media (max-width:990px) {
 }
 
 @media (max-width:768px) {
     .myLocation, .forecast, .weatherNow {
-        font-size: 60px;
         font-family: Calibri, Arial;
-        color: #111111;
-        text-align: center;
-        padding: 10px;
-        margin: 10px;
-    }}
-
-@media (max-width:480px) {
-    .myLocation, .forecast, .weatherNow {
         font-size: 60px;
-        font-family: Calibri, Arial;
         color: #111111;
         text-align: center;
         padding: 10px;
         margin: 10px;
     }
+    .lbl {
+        display: block;
+    }
+    .ico {
+        display: block;
+    }
+}
+
+@media (max-width:480px) {
 }
 
