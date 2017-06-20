@@ -11,6 +11,7 @@
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
 
     <script src="scripts/scritps.js"></script>
 
@@ -47,50 +48,47 @@
     </div>
 
     <div class="container-fluid navbar-offset nopad">
-        <div class="row">
-            <div class="col-xs-12 cols-sm-12 col-md-6">
-                <div class="weatherNow"  id="infoWeatherNow">
-                    <div class="row infoNow infoEven">
-                        <div class="col-xs-12 col-sm-1"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-                        <div class="col-xs-12 col-sm-5"><span class="lbl"> Weather Now: </span></div>
-                        <div class="col-xs-12 col-sm-6" id="nfoSummary"></div>
-                    </div>
-                    <div class="row infoOdd">
-                        <div class="col-xs-12 col-sm-1"><i class="fa fa-thermometer-full"  aria-hidden="true"></i></div>
-                        <div class="col-xs-12 col-sm-5" id="nowTemperature"><span class="lbl">  Temperature: </span> </div>
-                        <div class="col-xs-12 col-sm-6" id="nfoTemperature"></div>
-                    </div>
-                    <div class="row infoEven">
-                       <div class="col-xs-12 col-sm-6"><span class="lbl">  Humidity: </span> </div>
-                       <div class="col-xs-12 col-sm-6" id="nfoHumidity"></div>
-                    </div>
+        <div class="weatherNow"  id="infoWeatherNow">
+            <div class="row infoNow infoEven">
+                <div class="col-xs-1 col-sm-1"><i class="wi wi-na ico nfoIcon"></i></div>
+                <div class="col-xs-5 col-sm-5"><span class="lbl"> Weather Now: </span></div>
+                <div class="col-xs-6 col-sm-6" id="nfoSummary"></div>
+            </div>
+            <div class="row infoOdd">
+                <div class="col-xs-1 col-sm-1"><i class="wi wi-thermometer ico wi-fx" aria-hidden="true"></i></div>
+                <div class="col-xs-5 col-sm-5" id="nowTemperature"><span class="lbl">Temperature: </span> </div>
+                <div class="col-xs-6" id="nfoTemperature"></div>
+            </div>
+            <div class="row infoEven">
+                <div class="col-xs-1 col-sm-1"><i class="wi wi-humidity ico" aria-hidden="true"></i></div>
+                <div class="col-xs-5 col-sm-5"><span class="lbl">  Humidity: </span> </div>
+                <div class="col-xs-6 col-sm-6" id="nfoHumidity"></div>
+            </div>
 
-                    <div class="row infoOdd">
-                        <div class="col-xs-12 col-sm-6"><span class="lbl">  Wind Speed: </span> </div>
-                        <div class="col-xs-12 col-sm-6" id="nfoWindSpeed"></div>
-                    </div>
-                    <div class="row infoEven">
-                        <div class="col-xs-12 col-sm-6"><span class="lbl">  Cloud Cover: </span> </div>
-                        <div class="col-xs-12 col-sm-6" id="nfoCloudCover"></div>
-                    </div>
-                    <div class="row infoOdd">
-                        <div class="col-xs-12 col-sm-6"><span class="lbl" id="nfoPrecipType"></span></div>
-                        <div class="col-xs-12 col-sm-6" id="nfoPrecipProbability"></span></div>
-                    </div>
+            <div class="row infoOdd">
+                <div class="col-xs-1 col-sm-1"><i class="wi wi-strong-wind ico" aria-hidden="true"></i></div>
+                <div class="col-xs-5 col-sm-5"><span class="lbl">  Wind Speed: </span> </div>
+                <div class="col-xs-6 col-sm-6" id="nfoWindSpeed"></div>
+            </div>
+            <div class="row">
+                <div class="container-fluid text-center footer">
+                    <p class="col-xs-12 col-sm-4" >Inspired by <a href="https://www.freecodecamp.com" target="_blank">freeCodeCamp</a></p>
+                    <p class="col-xs-12 col-sm-4" >Coded by <a href="https://chentsuhsi.github.io" target="_blank">Chen, Tsu Hsi</a></p>
+                    <p class="col-xs-12 col-sm-4" >easyApps.BR © <script>document.write(new Date().getFullYear())</script>. All Lefts Donated.</p>
                 </div>
             </div>
-            <div class="col-xs-12 cols-sm-12 col-md-8">
-                <div class="daily forecast scrollable">
-                </div>
-
+<!--
+            <div class="row infoEven">
+                <div class="col-xs-12 col-sm-1"><i class="wi wi-cloudy" aria-hidden="true"></i></div>
+                <div class="col-xs-12 col-sm-5"><span class="lbl">  Cloud Cover: </span> </div>
+                <div class="col-xs-12 col-sm-6" id="nfoCloudCover"></div>
             </div>
-        </div>
-        <div class="row">
-            <div class="container-fluid text-center footer">
-                <p class="col-xs-12" >Inspired by <a href="https://www.freecodecamp.com" target="_blank">freeCodeCamp</a></p>
-                <p class="col-xs-12" >Coded by <a href="https://chentsuhsi.github.io" target="_blank">Chen, Tsu Hsi</a></p>
-                <p class="col-xs-12" >easyApps.BR © <script>document.write(new Date().getFullYear())</script>. All Lefts Donated.</p>
+            <div class="row infoOdd">
+                <div class="col-xs-12 col-sm-1"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+                <div class="col-xs-12 col-sm-5"><span class="lbl" id="nfoPrecipType"></span></div>
+                <div class="col-xs-12 col-sm-6" id="nfoPrecipProbability"></span></div>
             </div>
+-->
         </div>
     </div>
 

@@ -49,13 +49,77 @@ function getForecastMessage (pSite, pLat, pLng, callback){
                         break;
                 }
 
+                var mystr = myObj['currently']['icon'];
+                switch (str) {
+                    case mystr = "day-sunny":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-clear-day');
+                        break;
+                    case mystr = "night-clear":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-clear-night');
+                        break;
+                    case mystr = "rain":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-rain');
+                        break;
+                    case mystr = "snow":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-snow');
+                        break;
+                    case mystr = "strong-wind":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-sleet');
+                        break;
+                    case mystr = "fog":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-fog');
+                        break;
+                    case mystr = "cloudy":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-cloudy');
+                        break;
+                    case mystr = "mostly-cloudy":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-cloudy');
+                        break;
+                    case mystr = "partly-cloudy":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-partly-cloudy-day');
+                        break;
+                    case mystr = "strong-wind":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-wind');
+                        break;
+                    case mystr = "day-cloudy":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-partly-cloudy-day');
+                        break;
+                    case mystr = "night-cloudy":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-partly-cloudy-night');
+                        break;
+                    case mystr = "hail":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-hail');
+                        break;
+                    case mystr = "thunderstorm":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-thunderstorm');
+                        break;
+                    case mystr = "tornado":
+                        $('.nfoIcon').removeClass('wi-na');
+                        $('.nfoIcon').addClass('wi-forecast-io-tornado');
+                        break;
+                }
+
                 $("#nfoSummary").html(myObj['currently']['summary']);
                 $("#nfoTemperature").html(Math.round(myObj['currently']['temperature']) + 'ºF');
                 $("#nfoHumidity").html(Math.round(myObj['currently']['humidity'] * 100) + '%');
                 $("#nfoWindSpeed").html(myObj['currently']['windSpeed'] + 'mph');
-                $("#nfoCloudCover").html(Math.round(myObj['currently']['cloudCover']) + '%');
-                $("#nfoPrecipType").html(aux + ' Fall');
-                $("#nfoPrecipProbability").html(Math.round(myObj['currently']['precipProbability'] * 100) + ' %');
+//                $("#nfoCloudCover").html(Math.round(myObj['currently']['cloudCover']) + '%');
+//                $("#nfoPrecipType").html(aux + ' Fall');
+//                $("#nfoPrecipProbability").html(Math.round(myObj['currently']['precipProbability'] * 100) + ' %');
 
                 callback();
         }

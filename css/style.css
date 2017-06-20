@@ -52,20 +52,33 @@ body {
 }
 
 .ico {
-    display: block;
+
+    padding-top: 5px;
+    display: inline-block;
+    alignment: center;
 }
 .infoOdd {
-    background-color : #555555;
+    background-color : #dddddd;
 }
 
 .infoEven {
-    background-color : #aaaaaa;
-}
-@media (max-width:990px) {
+    background-color : #cccccc;
 }
 
-@media (max-width:768px) and (orientation: landscape){
-    .myLocation, .forecast, .weatherNow {
+.row-height {
+    min-height: 100%;
+}
+
+.col-sm-1, .col-sm-5, .col-sm-6 {
+    min-height : 20%
+}
+
+.row {
+    alignment: center;
+}
+
+@media (min-width:769px) {
+    .forecast, .weatherNow {
         font-family: Calibri, Arial;
         font-size: 60px;
         color: #111111;
@@ -73,31 +86,59 @@ body {
         padding: 10px;
         margin: 10px;
     }
+}
+
+
+@media (max-width:768px) {
+    .lbl {
+        display: none;
+    }
+}
+
+@media (max-width:768px) and (orientation: landscape) {
+    .myLocation, .forecast, .weatherNow {
+        font-family: Calibri, Arial;
+        font-size: 40px;
+        color: #111111;
+        text-align: center;
+        padding: 10px;
+        margin: 0px;
+    }
+
     .lbl {
         display: block;
     }
+
     .ico {
         display: block;
+    }
+
+    .col-xs-1, .col-xs-6, .col-xs-5,
+    .col-sm-1, .col-sm-6, .col-sm-5 {
+        max-height: 7.5%;
     }
 }
 
 @media (max-width:768px) and (orientation: portrait){
     .myLocation, .forecast, .weatherNow {
         font-family: Calibri, Arial;
-        font-size: 60px;
+        font-size: 40px;
         color: #111111;
         text-align: center;
         padding: 10px;
-        margin: 10px;
-    }
-    .lbl {
-        display: none;
+        margin: 0px;
     }
     .ico {
+        padding: 10px;
         display: block;
     }
-}
-
-@media (max-width:480px) {
+    .col-xs-1, .col-xs-6,
+    .col-sm-1, .col-sm-6 {
+        max-height : 7.5%;
+    }
+    .col-xs-5,
+    .col-sm-5 {
+        max-height: 0;
+    }
 }
 
