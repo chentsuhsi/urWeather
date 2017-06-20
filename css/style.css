@@ -51,7 +51,7 @@ body {
 }
 
 .myLocation, .forecast, .weatherNow {
-    font-size: 16px;
+    font-size: 18px;
     font-family: Calibri, Arial;
     color: #111111;
     text-align: left;
