@@ -64,7 +64,24 @@ body {
 @media (max-width:990px) {
 }
 
-@media (max-width:768px) {
+@media (max-width:768px) and (orientation: landscape){
+    .myLocation, .forecast, .weatherNow {
+        font-family: Calibri, Arial;
+        font-size: 60px;
+        color: #111111;
+        text-align: center;
+        padding: 10px;
+        margin: 10px;
+    }
+    .lbl {
+        display: block;
+    }
+    .ico {
+        display: block;
+    }
+}
+
+@media (max-width:768px) and (orientation: portrait){
     .myLocation, .forecast, .weatherNow {
         font-family: Calibri, Arial;
         font-size: 60px;

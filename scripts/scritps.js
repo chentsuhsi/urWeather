@@ -128,7 +128,7 @@ function initialize() {
 }
 
 $(document).ready(function() {
-//    $('#getQuote').on('click', getQuote);
     getLocation();
+    $('.myLocation').on('click', getLocation);
 });
 
