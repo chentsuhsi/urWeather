@@ -8,7 +8,7 @@ var googleMapsTimezoneAPI_Key = "AIzaSyDjB2WPD36RiK2jUTMwrJyp_UlFMpUeqic";
 
 var myLatitute = 0.00;
 var myLongitute = 0.00;
-var myUnit = "si";
+var myUnit = "us";
 var myObj = [];
 
 function getLocation() {
