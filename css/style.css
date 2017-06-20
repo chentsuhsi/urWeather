@@ -32,6 +32,11 @@ body {
   margin: 0;
 }
 
+.nav {
+    color: #aaaaaa;
+    font-size: 16px;
+}
+
 .container-fluid.scrollable {
   height: 100%; /*Sets the scrollable area to 100% of the viewport*/
   overflow: auto; /*Allows the scrollable area to have a scrollbar based on the height of its content*/
@@ -120,6 +125,11 @@ body {
         display: inline-block;
     }
 
+    .nav-btn {
+        height: 40px;
+        width: 40px;
+        font-size: 16px;
+    }
     .col-xs-1, .col-xs-6, .col-xs-5,
     .col-sm-1, .col-sm-6, .col-sm-5 {
         max-height: 7.5%;

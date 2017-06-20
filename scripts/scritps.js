@@ -8,6 +8,7 @@ var googleMapsTimezoneAPI_Key = "AIzaSyDjB2WPD36RiK2jUTMwrJyp_UlFMpUeqic";
 
 var myLatitute = 0.00;
 var myLongitute = 0.00;
+var myUnit = "si";
 var myObj = [];
 
 function getLocation() {
@@ -30,10 +31,11 @@ function getForecastMessage (pSite, pLat, pLng, callback){
     pSite = corsanywhere.concat(pSite, '/', pLat + ',' + pLng);
     $.getJSON(
         pSite,
+        {
+            units : myUnit
+        },
+
         function (data) {
-                //txt =  JSON.stringify(data);
-                //$('.forecast').html(JSON.stringify(data));
-                    //myObj = $.parseJSON(myObj);
                 myObj = data;
 
                 aux = myObj['currently']['precipType'];
@@ -104,9 +106,18 @@ function getForecastMessage (pSite, pLat, pLng, callback){
                 );
 
                 $("#nfoSummary").html(myObj['currently']['summary']);
-                $("#nfoTemperature").html(Math.round(myObj['currently']['temperature']) + 'ºF');
                 $("#nfoHumidity").html(Math.round(myObj['currently']['humidity'] * 100) + '%');
-                $("#nfoWindSpeed").html(myObj['currently']['windSpeed'] + 'mph');
+
+                if (myUnit == 'us'){
+                    $("#nfoWindSpeed").html(myObj['currently']['windSpeed'] + 'mph');
+                    $("#nfoTemperature").html(Math.round(myObj['currently']['temperature']) + 'ºF');
+                }
+                else {
+                    $("#nfoWindSpeed").html(myObj['currently']['windSpeed'] + 'kph');
+                    $("#nfoTemperature").html(Math.round(myObj['currently']['temperature']) + 'ºC');
+                }
+
+
 //                $("#nfoCloudCover").html(Math.round(myObj['currently']['cloudCover']) + '%');
 //                $("#nfoPrecipType").html(aux + ' Fall');
 //                $("#nfoPrecipProbability").html(Math.round(myObj['currently']['precipProbability'] * 100) + ' %');
@@ -115,20 +126,6 @@ function getForecastMessage (pSite, pLat, pLng, callback){
         }
     )
 }
-
-function weatherNow (obj) {
-    var txt = '';
-
-    txt  = '<hr>';
-    txt += '    <div>' + obj[0].summary + ' </div>';
-    txt += '    <div id="nowTemperature"> Temperature: ' + obj[1].summary + ' ºC</div>';
-    txt += '    <div> Humidity:' + obj[1].summary + ' %</div>';
-    txt += '    <div> Wind Speed: ' + obj[1].summary + ' km/h</div>';
-    txt += '    <div> ' + obj[1].precipType.toUpperCase() + ' Probability: ' + Math.floor(obj[1].precipProbability * 100) + ' </div>';
-
-    $('.infoWeatherNow').html(txt);
-}
-
 
 
 function setMyPositions(lat, lng, callback) {
@@ -162,15 +159,19 @@ function showLocation(lat, lng, callback) {
                 );
             } else {
                 $(".myLocation").html(
-                    "My position is: " + "<br>Latitude: " + myLatitute + ", Longitude: " + myLongitute);
+                    "Lat: " + myLatitute + ", Lng: " + myLongitute);
             }
         } else {
             $(".myLocation").html(
-                "My position is: " + "<br>Latitude: " + myLatitute + ", Longitude: " + myLongitute + "<br>" +
-                "Geocoder failed due to: " + status);
+                "Lat: " + myLatitute + ", Lng: " + myLongitute);
         }
     });
     callback();
+}
+
+function setUnit(pUnit) {
+    myUnit = pUnit;
+    getLocation();
 }
 
 function errorFunction(){
