@@ -4,6 +4,7 @@ body, html {
     background-color: #ffffff;
     color: #000000;
     padding-top: 0;
+    padding-bottom: 0;
     margin: 0;
     font-family: Verdana, Arial;
 }
@@ -12,9 +13,12 @@ body {
     padding-top: 60px;
 }
 
-footer {
+.infoNow {
+}
+
+.footer {
   background-color: #000000;  
-  font-size: 16px;
+  font-size: 10px;
   color: #ffffff;
 }
 .navbar-offset {
@@ -32,15 +36,11 @@ footer {
 }
 
 .container-fluid.scrollable {
-  height: 94%; /*Sets the scrollable area to 100% of the viewport*/
+  height: 100%; /*Sets the scrollable area to 100% of the viewport*/
   overflow: auto; /*Allows the scrollable area to have a scrollbar based on the height of its content*/
   margin: 0;
 }
 
-.nopad {
-    padding: 0;
-    margin: 0;
-}
 
 .buttons {
     padding : 5px 5% 0 5%;
@@ -50,14 +50,13 @@ footer {
     padding: 5%;
 }
 
-.myLocation, .forecast {
-    font-size: 20px;
+.myLocation, .forecast, .weatherNow {
+    font-size: 16px;
     font-family: Calibri, Arial;
     color: #111111;
-    text-align: justify;
-    padding: 25px 25px 25px 25px;
-    margin: 25px 25px 25px 25px;
-    overflow: hidden;
+    text-align: left;
+    padding: 10px;
+    margin: 10px;
 }
 
 @media (max-width:990px) {

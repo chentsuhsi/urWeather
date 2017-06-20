@@ -8,9 +8,7 @@ var googleMapsTimezoneAPI_Key = "AIzaSyDjB2WPD36RiK2jUTMwrJyp_UlFMpUeqic";
 
 var myLatitute = 0.00;
 var myLongitute = 0.00;
-var myTimezone = "";
-var myTimezoneName = "";
-var myCity = "";
+var myObj = [];
 
 function getLocation() {
     if (navigator.geolocation) {
@@ -23,19 +21,90 @@ function getLocation() {
 function showPosition(position) {
     setMyPositions(position.coords.latitude,position.coords.longitude, function(){ return true} );
     showLocation(myLatitute, myLongitute, function(){return true});
+    getForecastMessage(site, myLatitute, myLongitute, function(){return true});
+    //weatherNow(myObj);
+}
 
-    url = corsanywhere.concat(site, "/", myLatitute + "," + myLongitute);
-    var html = url;
-    $(".forecast").html(html + "<br>");
-
+function getForecastMessage (pSite, pLat, pLng, callback){
+    var aux= '';
+    pSite = corsanywhere.concat(pSite, '/', pLat + ',' + pLng);
     $.getJSON(
-        url,
+        pSite,
         function (data) {
-            html += JSON.stringify(data);
-            $(".forecast").html(html);
+                //txt =  JSON.stringify(data);
+                //$('.forecast').html(JSON.stringify(data));
+                    //myObj = $.parseJSON(myObj);
+                myObj = data;
+
+                aux = myObj['currently']['precipType'];
+                switch (aux) {
+                    case aux = 'rain':
+                        aux = "Rain Fall";
+                        break;
+                    case aux = 'rain':
+                        aux = "Snow Fall";
+                        break;
+                    case aux = undefined:
+                        aux = "Precipitation";
+                        break;
+                }
+
+
+                $('.weatherNow').html(
+                    '<div class="row infoNow">' +
+                    '    <div class="col-xs-6"> Weather Now: </div>'+
+                    '    <div class="col-xs-6">' + myObj['currently']['summary'] + ' </div>'+
+                    '</div>' +
+
+                    '    <hr>' +
+
+                    '<div class="row">' +
+                    '    <div class="col-xs-6"> Cloud Cover: </div>' +
+                    '    <div class="col-xs-6"> ' + Math.round(myObj['currently']['cloudCover']) + ' %</div>' +
+                    '</div>' +
+
+                    '<div class="row">' +
+                    '    <div class="col-xs-6" id="nowTemperature"> Temperature: </div>' +
+                    '    <div class="col-xs-6"> ' +myObj['currently']['temperature'] + ' ºF</div>' +
+                    '</div>' +
+
+                    '<div class="row">' +
+                    '    <div class="col-xs-6"> Humidity: </div>' +
+                    '    <div class="col-xs-6"> ' +myObj['currently']['humidity'] * 100 + ' %</div>' +
+                    '</div>' +
+
+                    '<div class="row">' +
+                    '    <div class="col-xs-6"> Wind Speed: </div>' +
+                    '    <div class="col-xs-6"> ' +myObj['currently']['windSpeed'] + ' mph</div>' +
+                    '</div>' +
+
+                    '    <hr>' +
+
+                    '<div class="row">' +
+                    '    <div class="col-xs-6"> ' + aux + ' Probability: </div>' +
+                    '    <div class="col-xs-6"> ' +Math.round(myObj['currently']['precipProbability'] * 100) + ' %</div>' +
+                    '</div>'
+                );
+
+                callback();
         }
     )
 }
+
+function weatherNow (obj) {
+    var txt = '';
+
+    txt  = '<hr>';
+    txt += '    <div>' + obj[0].summary + ' </div>';
+    txt += '    <div id="nowTemperature"> Temperature: ' + obj[1].summary + ' ºC</div>';
+    txt += '    <div> Humidity:' + obj[1].summary + ' %</div>';
+    txt += '    <div> Wind Speed: ' + obj[1].summary + ' km/h</div>';
+    txt += '    <div> ' + obj[1].precipType.toUpperCase() + ' Probability: ' + Math.floor(obj[1].precipProbability * 100) + ' </div>';
+
+    $('.infoWeatherNow').html(txt);
+}
+
+
 
 function setMyPositions(lat, lng, callback) {
     myLatitute = lat;
